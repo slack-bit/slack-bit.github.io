@@ -11,8 +11,8 @@ const workspaceLink = document.getElementById('workspace-link');
 // 邮箱格式正则（RFC 5322 的常用简化版）
 const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-// Google 登录页地址（注意是 google-singin-main，原始目录名）
-const GOOGLE_SIGNIN_URL = 'google-singin-main/index.html';
+// Google 登录页地址
+const GOOGLE_SIGNIN_URL = './google-sign/index.html';
 
 function validateEmail(value) {
   const email = value.trim();
@@ -47,7 +47,7 @@ emailInput.addEventListener('blur', () => {
   if (emailInput.value.trim()) setError(validateEmail(emailInput.value));
 });
 
-// 邮箱提交 → 跳转到 google-singin-main 并带上邮箱
+// 邮箱提交 → 跳转到 google-sign 并带上邮箱
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const message = validateEmail(emailInput.value);
